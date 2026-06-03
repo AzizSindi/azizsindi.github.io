@@ -7,4 +7,4 @@ Research focus: lifecycle digitalisation of ships and offshore
 structures, Digital Healthcare Engineering (DHE), digital twins, 
 and aging monopile offshore wind turbines.
 
-🌐 Live site: https://azizsindi.github.io/research/
+🌐 Live site: https://azizsindi.github.io/
