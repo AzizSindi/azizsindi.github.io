@@ -1,308 +1,1034 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Digital Healthcare Engineering (DHE) — Abdulaziz Faisal Sindi</title>
-<meta name="description" content="Digital Healthcare Engineering (DHE): a modular framework for lifecycle digitalisation of ships and offshore structures — real-time monitoring, digital twins, AI diagnostics, and predictive maintenance. Overview, system images, and research literature." />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L8PJY7GY5G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L8PJY7GY5G');
+</script>
+
+<title>Digital Healthcare Engineering (DHE): Lifecycle Digitalisation of Ships &amp; Offshore Structures</title>
+<meta name="description" content="Digital Healthcare Engineering (DHE) is a modular framework for the lifecycle digitalisation of ships and offshore structures, integrating real-time monitoring, digital twins, AI diagnostics, and predictive maintenance. Conceived in 2020 and first published in 2021 by Abdulaziz Faisal Sindi at UCL." />
 <meta name="author" content="Abdulaziz Faisal Sindi" />
-<meta name="keywords" content="Digital Healthcare Engineering, DHE, lifecycle digitalisation, digital twin, offshore wind turbines, monopile, ship structures, structural health monitoring, predictive maintenance, Abdulaziz Sindi, UCL" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Digital Healthcare Engineering (DHE) — Abdulaziz Faisal Sindi" />
-<meta property="og:description" content="A modular framework for lifecycle digitalisation of ships and offshore structures: monitoring, digital twins, AI diagnostics, and predictive maintenance." />
+<meta name="keywords" content="Digital Healthcare Engineering, DHE, lifecycle digitalisation, ships, offshore structures, offshore wind turbines, monopile, digital twin, structural health monitoring, predictive maintenance, AI diagnostics, UCL, Abdulaziz Sindi" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Digital Healthcare Engineering (DHE)" />
+<meta property="og:description" content="A modular framework for lifecycle digitalisation of ships and offshore structures: real-time monitoring, digital twins, AI diagnostics, and predictive maintenance." />
+<meta property="og:url" content="https://www.digitalhealthcareengineering.com" />
+<meta name="google-site-verification" content="TqyU3IZ0YurffqJufUUSIOu-iRARzYbLlqtHQMUQfKU" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.digitalhealthcareengineering.com/#website",
+      "url": "https://www.digitalhealthcareengineering.com/",
+      "name": "Digital Healthcare Engineering (DHE)",
+      "description": "A modular framework for the lifecycle digitalisation of ships and offshore structures.",
+      "about": { "@id": "https://www.digitalhealthcareengineering.com/#dhe" }
+    },
+    {
+      "@type": "DefinedTerm",
+      "@id": "https://www.digitalhealthcareengineering.com/#dhe",
+      "name": "Digital Healthcare Engineering",
+      "alternateName": "DHE",
+      "description": "A modular framework for the lifecycle digitalisation of ships and offshore structures, integrating real-time structural health monitoring, secure data transmission, digital-twin analytics, AI-driven diagnostics, and predictive maintenance. The underlying framework was conceived and proposed by Abdulaziz Sindi in 2020, first published in 2021 (Sindi, Thomas & Paik, ICSOS 2021), and was later presented under the name Digital Healthcare Engineering.",
+      "url": "https://www.digitalhealthcareengineering.com/"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.digitalhealthcareengineering.com/#sindi",
+      "name": "Abdulaziz Faisal Sindi",
+      "givenName": "Abdulaziz",
+      "familyName": "Sindi",
+      "jobTitle": "PhD Researcher",
+      "affiliation": { "@type": "CollegeOrUniversity", "name": "University College London" },
+      "description": "PhD researcher in Mechanical Engineering at University College London who proposed the modular framework for lifecycle digitalisation of ships and offshore structures that became known as Digital Healthcare Engineering (DHE).",
+      "url": "https://azizsindi.github.io",
+      "sameAs": [
+        "https://orcid.org/0009-0009-2358-2190",
+        "https://scholar.google.co.uk/citations?user=Xps83mAAAAAJ",
+        "https://www.researchgate.net/profile/Abdulaziz-Sindi",
+        "https://www.linkedin.com/in/aziz-sindi-4a5a2b127/",
+        "https://profiles.ucl.ac.uk/81227-abdulaziz-faisal-sindi-sindi/about"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "A state-of-the-art on the digital twin modelling for lifetime healthcare of ships and offshore structures",
+      "datePublished": "2021",
+      "isPartOf": "Proceedings of the 2021 International Conference on Ships and Offshore Structures (ICSOS)",
+      "author": [
+        { "@type": "Person", "name": "Abdulaziz Sindi" },
+        { "@type": "Person", "name": "Giles Thomas" },
+        { "@type": "Person", "name": "Jeom Kee Paik" }
+      ],
+      "about": { "@id": "https://www.digitalhealthcareengineering.com/#dhe" }
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Advancing digital healthcare engineering for ageing ships and offshore structures: an in-depth review and feasibility analysis",
+      "datePublished": "2024",
+      "isPartOf": "Data-Centric Engineering",
+      "sameAs": "https://doi.org/10.1017/dce.2024.14",
+      "author": [
+        { "@type": "Person", "name": "Abdulaziz Sindi" },
+        { "@type": "Person", "name": "Hyeong Jin Kim" },
+        { "@type": "Person", "name": "Young Jun Yang" },
+        { "@type": "Person", "name": "Giles Thomas" },
+        { "@type": "Person", "name": "Jeom Kee Paik" }
+      ],
+      "about": { "@id": "https://www.digitalhealthcareengineering.com/#dhe" }
+    }
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --ink:#0d1a26; --ink-2:#13283a; --paper:#f4efe4; --paper-2:#ece4d4;
-    --line:#d8cdb6; --brass:#b9852f; --brass-soft:#cf9b46; --teal:#2f6f6c;
-    --muted:#5c6a73; --muted-light:#9fb0bb; --max:1140px;
+    --abyss:#060f1a;
+    --ink:#0b1723;
+    --ink-2:#102337;
+    --paper:#f2ecdd;
+    --paper-2:#eae2cf;
+    --line-d:rgba(242,236,221,.12);
+    --line-p:#d6cab0;
+    --brass:#b9852f;
+    --brass-soft:#d09c46;
+    --teal:#3d8a86;
+    --teal-deep:#2f6f6c;
+    --mist:#93a6b3;
+    --mist-soft:#c3d0d9;
+    --max:1240px;
+    --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;
+    --ease:cubic-bezier(.19,1,.22,1);
   }
-  *{box-sizing:border-box;}
+  *{box-sizing:border-box; margin:0;}
   html{scroll-behavior:smooth;}
-  body{margin:0; background:var(--paper); color:var(--ink); font-family:"Hanken Grotesk", system-ui, sans-serif; font-size:18px; line-height:1.65; -webkit-font-smoothing:antialiased;}
-  a{color:inherit;}
-  h1,h2,h3{font-family:"Fraunces", Georgia, serif; font-weight:500; line-height:1.1; letter-spacing:-0.01em;}
-  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
-
-  header.nav{position:sticky; top:0; z-index:50; background:rgba(13,26,38,.92); backdrop-filter:blur(8px); border-bottom:1px solid rgba(255,255,255,.08);}
-  .nav-inner{display:flex; align-items:center; justify-content:space-between; height:64px;}
-  .brand{font-family:"Fraunces", serif; color:var(--paper); font-size:18px; letter-spacing:.02em; text-decoration:none; display:flex; align-items:center; gap:10px;}
-  .brand .mark{width:26px;height:26px;border:1.5px solid var(--brass);border-radius:50%; display:flex;align-items:center;justify-content:center;color:var(--brass); font-size:12px;font-weight:600;font-family:"Hanken Grotesk",sans-serif;}
-  nav ul{display:flex; gap:30px; list-style:none; margin:0; padding:0;}
-  nav a{color:var(--muted-light); text-decoration:none; font-size:14.5px; letter-spacing:.02em; transition:color .2s;}
-  nav a:hover, nav a.active{color:var(--paper);}
-  .nav-toggle{display:none; background:none; border:0; color:var(--paper); font-size:22px; cursor:pointer;}
-
-  .hero{position:relative; overflow:hidden; background:linear-gradient(165deg,#0b1722 0%, #11283b 60%, #14313f 100%); color:var(--paper); padding:104px 0 88px;}
-  .hero .contours{position:absolute; inset:0; opacity:.16; pointer-events:none;}
-  .hero .glow{position:absolute; right:-180px; top:-120px; width:520px; height:520px; background:radial-gradient(circle, rgba(185,133,47,.35), transparent 65%); filter:blur(10px); pointer-events:none;}
-  .hero-inner{position:relative; z-index:2; max-width:840px;}
-  .eyebrow{font-size:13px; letter-spacing:.22em; text-transform:uppercase; color:var(--brass-soft); margin:0 0 20px; font-weight:600;}
-  .hero h1{font-size:clamp(38px,5.6vw,64px); margin:0 0 20px; color:#fff;}
-  .hero h1 .accent{color:var(--brass-soft); font-style:italic;}
-  .hero .lede{font-size:clamp(17px,2vw,21px); color:#d7e0e6; max-width:680px; margin:0;}
-
-  section{padding:84px 0;}
-  .section-tag{font-size:12.5px; letter-spacing:.22em; text-transform:uppercase; font-weight:600; color:var(--brass); margin:0 0 14px; display:flex; align-items:center; gap:12px;}
-  .section-tag::before{content:""; width:34px; height:1px; background:var(--brass);}
-  h2.section-title{font-size:clamp(28px,3.6vw,40px); margin:0 0 24px; max-width:20ch;}
-  .lead-para{font-size:20px; font-family:"Fraunces",serif; line-height:1.45; color:var(--ink); margin:0 0 22px; max-width:760px;}
-  p.body{max-width:760px; color:#26323b; margin:0 0 18px;}
-
-  /* intro */
-  .intro-sec{background:var(--paper);}
-  .analogy{border-left:2px solid var(--brass); padding:6px 0 6px 24px; margin:30px 0 0; max-width:720px;}
-  .analogy p{margin:0; font-family:"Fraunces",serif; font-size:19px; line-height:1.5; color:var(--ink-2);}
-
-  /* diagram */
-  .diagram-sec{background:var(--ink); color:var(--paper);}
-  .diagram-sec .section-tag{color:var(--brass-soft);} .diagram-sec .section-tag::before{background:var(--brass-soft);}
-  .diagram-sec h2{color:#fff;}
-  .diagram-sec .body{color:#cdd7dd;}
-  .flow{display:flex; align-items:stretch; gap:0; margin-top:36px;}
-  .step{flex:1; position:relative; padding:0 18px; text-align:center;}
-  .step:not(:last-child)::after{content:""; position:absolute; top:26px; right:-1px; width:2px; height:calc(100% - 26px); background:transparent;}
-  .step .dot{width:54px; height:54px; margin:0 auto 18px; border:1.5px solid var(--brass); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:"Fraunces",serif; font-size:22px; color:var(--brass-soft); background:rgba(185,133,47,.08); position:relative; z-index:2;}
-  .step h3{font-size:16px; color:#fff; margin:0 0 8px; line-height:1.25;}
-  .step p{font-size:13.5px; color:#aebac2; margin:0; line-height:1.5;}
-  .flow-track{position:relative;}
-  .flow-track .rail{position:absolute; top:27px; left:8%; right:8%; height:2px; background:linear-gradient(90deg,var(--brass),var(--teal)); opacity:.5; z-index:1;}
-
-  /* gallery */
-  .gallery-sec{background:var(--paper-2);}
-  .fig{margin:0 0 40px; max-width:920px;}
-  .fig img{width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:4px; background:#fff;}
-  .fig figcaption{font-size:14.5px; color:var(--muted); margin-top:12px; line-height:1.55;}
-  .fig figcaption strong{color:var(--ink); font-weight:600;}
-  .fig-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:920px;}
-  .fig-grid .fig{margin-bottom:0; max-width:none;}
-  .group-credit{display:inline-block; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--teal); border:1px solid var(--teal); border-radius:2px; padding:2px 8px; margin-top:8px;}
-
-  /* literature */
-  .lit-sec{background:var(--paper);}
-  .lit-list{counter-reset:ref; max-width:880px; margin:14px 0 0; padding:0; list-style:none;}
-  .lit-list li{counter-increment:ref; position:relative; padding:14px 0 14px 44px; border-bottom:1px solid var(--line); font-size:15px; line-height:1.55; color:#33414b;}
-  .lit-list li::before{content:"[" counter(ref) "]"; position:absolute; left:0; top:14px; font-family:"Fraunces",serif; font-size:14px; color:var(--brass);}
-  .lit-list li strong{color:var(--ink); font-weight:600;}
-  .lit-list li.mine{background:linear-gradient(90deg, rgba(185,133,47,.07), transparent 70%);}
-  .lit-list li a{color:var(--teal); text-decoration:none; border-bottom:1px solid transparent;}
-  .lit-list li a:hover{border-bottom-color:var(--teal);}
-  .lit-note{font-size:14px; color:var(--muted); margin-top:18px; max-width:760px;}
-
-  .backstrip{background:var(--ink); color:var(--paper); padding:54px 0;}
-  .backstrip a{color:var(--brass-soft); text-decoration:none; font-family:"Fraunces",serif; font-size:22px;}
-  .backstrip a:hover{color:#fff;}
-
-  footer{background:#091420; color:var(--muted-light); padding:30px 0; font-size:13.5px;}
-  .footer-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
-
-  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
-  .reveal.in{opacity:1; transform:none;}
-
-  @media(max-width:880px){
-    .flow{flex-wrap:wrap; gap:28px;}
-    .step{flex:0 0 45%;}
-    .flow-track .rail{display:none;}
+  body{
+    background:var(--abyss); color:var(--paper);
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    font-size:17.5px; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
-  @media(max-width:620px){
-    body{font-size:17px;}
-    nav ul{display:none; position:absolute; top:64px; left:0; right:0; background:var(--ink); flex-direction:column; gap:0; padding:8px 0; border-bottom:1px solid rgba(255,255,255,.1);}
-    nav ul.open{display:flex;}
-    nav li{padding:12px 28px;}
-    .nav-toggle{display:block;}
-    section{padding:60px 0;}
-    .hero{padding:84px 0 72px;}
-    .step{flex:0 0 100%;}
-    .fig-grid{grid-template-columns:1fr;}
+  ::selection{background:var(--brass); color:var(--abyss);}
+  a{color:inherit;}
+  img{max-width:100%; height:auto; display:block;}
+  h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif; font-weight:400; line-height:1.05; letter-spacing:-.015em;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 clamp(22px,4vw,48px);}
+  section{position:relative; scroll-margin-top:76px;}
+  .mono{font-family:var(--mono); font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;}
+
+  /* grain */
+  .grain{position:fixed; inset:-50%; width:200%; height:200%; pointer-events:none; z-index:2000; opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    animation:grain 7s steps(8) infinite;}
+  @keyframes grain{0%,100%{transform:translate(0,0)}25%{transform:translate(-2%,2%)}50%{transform:translate(2%,-1%)}75%{transform:translate(-1%,-2%)}}
+
+  /* cursor */
+  .cur-dot,.cur-ring{position:fixed; top:0; left:0; pointer-events:none; z-index:3000; border-radius:50%; transform:translate(-50%,-50%); display:none;}
+  .cur-dot{width:6px; height:6px; background:var(--brass-soft);}
+  .cur-ring{width:34px; height:34px; border:1px solid rgba(208,156,70,.55); transition:width .25s var(--ease),height .25s var(--ease),border-color .25s;}
+  body.cur-on .cur-dot,body.cur-on .cur-ring{display:block;}
+  body.cur-on.cur-grow .cur-ring{width:58px; height:58px; border-color:var(--teal);}
+  @media(pointer:coarse){.cur-dot,.cur-ring{display:none !important;}}
+
+  /* progress */
+  .progress{position:fixed; top:0; left:0; right:0; height:2px; z-index:1200; background:transparent;}
+  .progress span{display:block; height:100%; width:100%; background:linear-gradient(90deg,var(--brass),var(--teal)); transform:scaleX(0); transform-origin:left;}
+
+  /* preloader */
+  .loader{position:fixed; inset:0; z-index:5000; background:var(--abyss); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:22px;}
+  .loader .l-mark{font-family:"Fraunces",serif; font-size:clamp(40px,7vw,72px); letter-spacing:.02em; color:var(--paper); display:flex; overflow:hidden;}
+  .loader .l-mark span{display:inline-block; transform:translateY(110%);}
+  .loader .l-line{width:min(320px,60vw); height:1px; background:var(--line-d); position:relative; overflow:hidden;}
+  .loader .l-line i{position:absolute; inset:0; background:linear-gradient(90deg,var(--brass),var(--teal)); transform:scaleX(0); transform-origin:left;}
+  .loader .l-sub{opacity:0; color:var(--mist);}
+  html.no-js .loader,html.reduced .loader{display:none;}
+  @keyframes loaderFail{to{opacity:0; visibility:hidden;}}
+  .loader{animation:loaderFail .6s ease 3.2s forwards;}
+
+  /* nav */
+  header.nav{position:fixed; top:0; left:0; right:0; z-index:1100; transition:transform .5s var(--ease), background .4s;}
+  header.nav.scrolled{background:rgba(6,15,26,.82); backdrop-filter:blur(12px); border-bottom:1px solid var(--line-d);}
+  header.nav.hide{transform:translateY(-100%);}
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; height:72px;}
+  .brand{font-family:"Fraunces",serif; font-size:19px; text-decoration:none; display:flex; align-items:baseline; gap:12px; color:var(--paper);}
+  .brand b{font-weight:500; letter-spacing:.04em;}
+  .brand .est{font-family:var(--mono); font-size:10px; letter-spacing:.18em; color:var(--brass-soft);}
+  nav.desk ul{display:flex; gap:34px; list-style:none; padding:0;}
+  nav.desk a{position:relative; text-decoration:none; font-size:14px; letter-spacing:.03em; color:var(--mist); transition:color .3s;}
+  nav.desk a::after{content:""; position:absolute; left:0; bottom:-6px; width:100%; height:1px; background:var(--brass-soft); transform:scaleX(0); transform-origin:right; transition:transform .45s var(--ease);}
+  nav.desk a:hover,nav.desk a.active{color:var(--paper);}
+  nav.desk a:hover::after,nav.desk a.active::after{transform:scaleX(1); transform-origin:left;}
+  .nav-cta{font-size:13.5px; letter-spacing:.04em; text-decoration:none; color:var(--brass-soft); border:1px solid rgba(185,133,47,.5); padding:9px 18px; border-radius:2px; transition:background .3s,color .3s;}
+  .nav-cta:hover{background:var(--brass); color:var(--abyss);}
+  .burger{display:none; background:none; border:0; width:44px; height:44px; cursor:pointer; position:relative; z-index:1400;}
+  .burger i{position:absolute; left:10px; right:10px; height:1.5px; background:var(--paper); transition:transform .4s var(--ease),opacity .3s; }
+  .burger i:nth-child(1){top:16px;} .burger i:nth-child(2){top:22px;} .burger i:nth-child(3){top:28px;}
+  body.menu-open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  body.menu-open .burger i:nth-child(2){opacity:0;}
+  body.menu-open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+
+  .m-menu{position:fixed; inset:0; z-index:1300; background:var(--ink); display:flex; flex-direction:column; justify-content:center; padding:0 clamp(26px,8vw,60px); visibility:hidden;}
+  .m-menu a{font-family:"Fraunces",serif; font-size:clamp(30px,8vw,52px); color:var(--paper); text-decoration:none; padding:10px 0; border-bottom:1px solid var(--line-d); display:flex; justify-content:space-between; align-items:center;}
+  .m-menu a .mono{color:var(--brass-soft);}
+  /* hero */
+  .hero{min-height:100svh; display:flex; flex-direction:column; justify-content:center; overflow:hidden; padding:120px 0 90px;}
+  #sea{position:absolute; top:0; left:0; width:100%; height:100%; display:block; z-index:0;}
+  .hero.no-sea{background:
+    radial-gradient(1200px 620px at 20% 0%, rgba(61,138,134,.15), transparent 60%),
+    radial-gradient(1000px 640px at 85% 100%, rgba(185,133,47,.13), transparent 62%),
+    linear-gradient(180deg,#081521 0%,#060f1a 100%);}
+  .sea-fallback{position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; opacity:.55; pointer-events:none;}
+  .sea-fallback svg{width:100%; height:100%; display:block;}
+  .hero .veil{position:absolute; inset:0; z-index:1; background:
+    radial-gradient(1100px 520px at 18% 8%, rgba(61,138,134,.14), transparent 60%),
+    radial-gradient(900px 520px at 88% 88%, rgba(185,133,47,.14), transparent 60%),
+    linear-gradient(180deg, rgba(6,15,26,.35) 0%, rgba(6,15,26,0) 35%, rgba(6,15,26,.72) 100%);
+    pointer-events:none;}
+  .hero .wrap{position:relative; z-index:2;}
+  .coords{position:absolute; z-index:2; right:clamp(22px,4vw,48px); top:96px; color:var(--mist); display:flex; flex-direction:column; gap:4px; text-align:right;}
+  .h-eyebrow{display:flex; align-items:center; gap:14px; color:var(--brass-soft); margin-bottom:26px;}
+  .h-eyebrow::before{content:""; width:44px; height:1px; background:var(--brass);}
+  .h-title{font-size:clamp(52px,10.5vw,150px); color:var(--paper); text-transform:none;}
+  .h-title .row{display:block; overflow:hidden;}
+  .h-title .row span{display:inline-block; will-change:transform;}
+  .h-title .it{font-style:italic; color:var(--brass-soft); font-weight:300;}
+  .h-sub{max-width:600px; margin:34px 0 0; color:var(--mist-soft); font-size:clamp(16px,1.9vw,20px);}
+  .h-sub b{color:var(--paper); font-weight:600;}
+  .h-cta{display:flex; gap:16px; flex-wrap:wrap; margin-top:44px;}
+  .btn{position:relative; overflow:hidden; display:inline-flex; align-items:center; gap:10px; padding:15px 28px; border-radius:2px; text-decoration:none; font-size:14px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; transition:color .35s;}
+  .btn .fill{position:absolute; inset:0; transform:scaleY(0); transform-origin:bottom; transition:transform .5s var(--ease); z-index:0;}
+  .btn span{position:relative; z-index:1;}
+  .btn-solid{background:var(--brass); color:var(--abyss);}
+  .btn-solid .fill{background:var(--paper);}
+  .btn-solid:hover .fill{transform:scaleY(1);}
+  .btn-ghost{border:1px solid rgba(242,236,221,.3); color:var(--paper);}
+  .btn-ghost .fill{background:var(--teal-deep);}
+  .btn-ghost:hover .fill{transform:scaleY(1);}
+  .scroll-cue{position:absolute; z-index:2; left:clamp(22px,4vw,48px); bottom:34px; display:flex; align-items:center; gap:12px; color:var(--mist);}
+  .scroll-cue .stem{width:1px; height:52px; background:var(--line-d); position:relative; overflow:hidden;}
+  .scroll-cue .stem i{position:absolute; left:0; top:-40%; width:100%; height:40%; background:var(--brass-soft); animation:drop 2.2s var(--ease) infinite;}
+  @keyframes drop{0%{top:-40%}60%,100%{top:110%}}
+
+  /* marquee */
+  .marq{border-top:1px solid var(--line-d); border-bottom:1px solid var(--line-d); overflow:hidden; padding:18px 0; background:rgba(242,236,221,.02);}
+  .marq .track{display:flex; gap:56px; width:max-content; animation:marq 34s linear infinite;}
+  .marq:hover .track{animation-play-state:paused;}
+  .marq .item{display:flex; align-items:center; gap:56px; font-family:"Fraunces",serif; font-size:19px; color:var(--mist); white-space:nowrap;}
+  .marq .item i{width:7px; height:7px; border-radius:50%; background:var(--brass); display:inline-block;}
+  @keyframes marq{to{transform:translateX(-50%);}}
+
+  /* shared section head */
+  .s-head{display:grid; grid-template-columns:auto 1fr; gap:26px; align-items:start; margin-bottom:clamp(36px,6vw,64px);}
+  .s-no{font-family:var(--mono); font-size:12px; letter-spacing:.2em; color:var(--brass-soft); padding-top:14px; white-space:nowrap;}
+  .s-title{font-size:clamp(34px,5vw,60px); max-width:16ch;}
+  .s-kicker{color:var(--mist); max-width:640px; margin-top:16px; font-size:17px;}
+  .lead{font-family:"Fraunces",serif; font-size:clamp(21px,2.6vw,30px); line-height:1.4; font-weight:300; max-width:820px;}
+  .lead .w{display:inline-block; overflow:hidden; vertical-align:bottom;}
+  .lead .w span{display:inline-block;}
+
+  /* what */
+  .what{padding:clamp(90px,12vw,150px) 0;}
+  .what-grid{display:grid; grid-template-columns:1.25fr .95fr; gap:clamp(40px,6vw,90px); margin-top:clamp(36px,5vw,60px); align-items:start;}
+  .what p.body{color:var(--mist-soft); margin-bottom:18px; max-width:62ch;}
+  .analogy{border-left:2px solid var(--brass); padding:8px 0 8px 26px; margin-top:30px;}
+  .analogy p{font-family:"Fraunces",serif; font-style:italic; font-size:20px; line-height:1.5; color:var(--paper);}
+  .needs{display:grid; gap:14px;}
+  .need{border:1px solid var(--line-d); background:rgba(242,236,221,.025); padding:22px 24px; border-radius:3px; transition:transform .45s var(--ease), border-color .35s, background .35s;}
+  .need:hover{transform:translateY(-4px); border-color:rgba(185,133,47,.55); background:rgba(185,133,47,.06);}
+  .need h4{font-size:17.5px; margin-bottom:6px; color:var(--paper);}
+  .need p{font-size:14.5px; color:var(--mist);}
+  .need .mono{color:var(--teal); display:block; margin-bottom:10px;}
+
+  /* framework horizontal */
+  .fw{background:linear-gradient(180deg,var(--abyss),var(--ink) 40%,var(--abyss));}
+  .fw-pin{position:relative;}
+  .fw-head{padding-top:clamp(90px,12vw,140px);}
+  .fw-stage{height:100vh; display:flex; flex-direction:column; justify-content:center; overflow:hidden;}
+  .fw-rail{height:1px; background:var(--line-d); margin:0 clamp(22px,4vw,48px) 34px; position:relative;}
+  .fw-rail i{position:absolute; inset:0; background:linear-gradient(90deg,var(--brass),var(--teal)); transform:scaleX(0); transform-origin:left;}
+  .fw-track{display:flex; gap:clamp(20px,2.5vw,34px); padding:0 clamp(22px,4vw,48px); will-change:transform;}
+  .fw-card{position:relative; flex:0 0 clamp(300px,34vw,440px); border:1px solid var(--line-d); background:rgba(242,236,221,.03); border-radius:4px; padding:34px 30px 30px; min-height:340px; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; transition:border-color .35s, background .35s;}
+  .fw-card:hover{border-color:rgba(61,138,134,.6); background:rgba(61,138,134,.05);}
+  .fw-card .ghost{position:absolute; top:-28px; right:-6px; font-family:"Fraunces",serif; font-size:170px; line-height:1; color:transparent; -webkit-text-stroke:1px rgba(242,236,221,.10); pointer-events:none;}
+  .fw-card .mono{color:var(--brass-soft); margin-bottom:14px;}
+  .fw-card h3{font-size:clamp(20px,2vw,25px); color:var(--paper); margin-bottom:10px;}
+  .fw-card p{font-size:14.5px; color:var(--mist);}
+  .fw-video{padding:clamp(70px,9vw,110px) 0 clamp(90px,12vw,140px);}
+  .video-shell{position:relative; max-width:880px; border:1px solid var(--line-d); border-radius:4px; overflow:hidden;}
+  .video-shell::before{content:""; display:block; padding-bottom:56.25%;}
+  .video-shell iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+  /* paper sections */
+  .paper-sec{background:var(--paper); color:var(--ink); padding:clamp(90px,12vw,150px) 0;}
+  .paper-sec .s-title{color:var(--ink);}
+  .paper-sec .s-no{color:var(--teal-deep);}
+  .paper-sec .s-kicker{color:#5a6a76;}
+  .paper-sec ::selection{background:var(--teal-deep); color:var(--paper);}
+
+  /* timeline */
+  .tl{position:relative; max-width:860px; margin-top:10px; padding-left:42px;}
+  .tl .spine{position:absolute; left:9px; top:8px; bottom:8px; width:2px; background:rgba(13,26,38,.12);}
+  .tl .spine i{position:absolute; inset:0; background:linear-gradient(var(--brass),var(--teal-deep)); transform:scaleY(0); transform-origin:top;}
+  .tl-item{position:relative; padding-bottom:clamp(34px,5vw,52px);}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-node{position:absolute; left:-42px; top:5px; width:20px; height:20px;}
+  .tl-node::before{content:""; position:absolute; inset:3px; border-radius:50%; background:var(--paper); border:2px solid var(--brass); transition:background .3s;}
+  .tl-node::after{content:""; position:absolute; inset:0; border-radius:50%; border:1px solid var(--brass); opacity:0; transform:scale(.6);}
+  .tl-item.on .tl-node::before{background:var(--brass);}
+  .tl-item.on .tl-node::after{animation:ping 1.6s var(--ease) 1;}
+  @keyframes ping{0%{opacity:.8; transform:scale(.6);}100%{opacity:0; transform:scale(2.4);}}
+  .tl-year{font-family:"Fraunces",serif; font-size:15px; letter-spacing:.06em; color:var(--brass); font-weight:600; margin-bottom:4px;}
+  .tl-item h3{font-size:clamp(20px,2.4vw,24px); color:var(--ink); margin-bottom:9px;}
+  .tl-item p{font-size:15.5px; color:#33414b; line-height:1.65; max-width:700px;}
+  .tl-item a{color:var(--teal-deep); text-decoration:none; border-bottom:1px solid rgba(47,111,108,.4); transition:border-color .25s;}
+  .tl-item a:hover{border-bottom-color:var(--teal-deep);}
+
+  /* applications */
+  .apps{padding:clamp(90px,12vw,150px) 0; background:var(--abyss);}
+  .app-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .app{border:1px solid var(--line-d); border-radius:4px; padding:28px 26px; background:rgba(242,236,221,.02); transition:transform .5s var(--ease), border-color .35s, background .35s;}
+  .app:hover{transform:translateY(-6px); border-color:rgba(185,133,47,.55); background:rgba(185,133,47,.05);}
+  .app svg{width:44px; height:44px; stroke:var(--teal); fill:none; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; margin-bottom:18px;}
+  .app svg *{stroke-dasharray:120; stroke-dashoffset:0; transition:stroke-dashoffset 1.1s var(--ease);}
+  .app:hover svg *{stroke-dashoffset:120; animation:draw 1.2s var(--ease) forwards;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  .app h3{font-size:18.5px; color:var(--paper); margin-bottom:8px;}
+  .app p{font-size:14.5px; color:var(--mist);}
+
+  /* practice */
+  .practice{padding:clamp(90px,12vw,150px) 0; background:linear-gradient(180deg,var(--abyss),var(--ink));}
+  .fig{max-width:920px; margin-bottom:clamp(36px,5vw,56px);}
+  .fig .frame{position:relative; overflow:hidden; border-radius:4px; border:1px solid var(--line-d); background:#fff;}
+  .fig .frame img{width:100%; transform:scale(1.12); will-change:transform;}
+  .fig .frame .mask{position:absolute; inset:0; background:var(--abyss); transform:scaleY(1); transform-origin:top; z-index:2;}
+  .fig figcaption{font-size:14.5px; color:var(--mist); margin-top:12px; line-height:1.6; max-width:820px;}
+  .fig figcaption strong{color:var(--paper); font-weight:600;}
+  .fig-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:920px;}
+  .fig-grid .fig{margin-bottom:0;}
+  .credit{display:inline-block; font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--teal); border:1px solid rgba(61,138,134,.5); border-radius:2px; padding:3px 9px; margin-top:9px;}
+  .practice h3.sub{font-size:clamp(21px,2.6vw,27px); color:var(--paper); margin:clamp(46px,7vw,66px) 0 14px;}
+  .practice p.body{color:var(--mist-soft); max-width:66ch; margin-bottom:26px;}
+
+  /* publications ledger */
+  .pubs .pub-group{font-family:var(--mono); font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--teal-deep); margin:clamp(40px,6vw,56px) 0 6px;}
+  .pubs .pub-group.first{margin-top:6px;}
+  .pub{position:relative; display:grid; grid-template-columns:86px 1fr 30px; gap:22px; padding:22px 10px; border-bottom:1px solid var(--line-p); align-items:start; transition:padding .35s var(--ease);}
+  .pub:first-of-type{border-top:1px solid var(--line-p);}
+  .pub::before{content:""; position:absolute; inset:0; background:rgba(185,133,47,.07); transform:scaleX(0); transform-origin:left; transition:transform .5s var(--ease); z-index:0;}
+  .pub:hover::before{transform:scaleX(1);}
+  .pub:hover{padding-left:18px;}
+  .pub > *{position:relative; z-index:1;}
+  .pub .yr{font-family:"Fraunces",serif; font-size:20px; color:var(--brass); padding-top:2px;}
+  .pub h3{font-size:17.5px; line-height:1.35; color:var(--ink); margin-bottom:5px; font-weight:500;}
+  .pub .meta{font-size:14px; color:#5a6a76; margin-bottom:3px;}
+  .pub .authors{font-size:14px; color:#33414b;}
+  .pub .authors strong{color:var(--brass); font-weight:600;}
+  .pub .tag{display:inline-block; font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--teal-deep); border:1px solid rgba(47,111,108,.5); border-radius:2px; padding:3px 8px; margin-top:9px;}
+  .pub .doi{color:var(--teal-deep); font-size:13.5px; text-decoration:none; border-bottom:1px solid rgba(47,111,108,.35);}
+  .pub .doi:hover{border-bottom-color:var(--teal-deep);}
+  .pub .arrow{padding-top:6px; color:var(--brass); opacity:0; transform:translateX(-8px); transition:opacity .35s, transform .45s var(--ease);}
+  .pub:hover .arrow{opacity:1; transform:none;}
+  .pub-note{margin-top:30px; font-size:15px; color:#5a6a76;}
+  .pub-note a{color:var(--teal-deep);}
+
+  /* researcher */
+  .res{padding:clamp(90px,12vw,150px) 0; background:var(--abyss);}
+  .res-grid{display:grid; grid-template-columns:1.35fr 1fr; gap:clamp(40px,7vw,100px); align-items:start;}
+  .res p.body{color:var(--mist-soft); margin-bottom:18px; max-width:64ch;}
+  .plinks{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px;}
+  .plink{display:inline-flex; align-items:center; gap:8px; padding:11px 17px; border:1px solid var(--line-d); border-radius:2px; text-decoration:none; color:var(--paper); font-size:13.5px; letter-spacing:.02em; transition:border-color .3s,color .3s,transform .35s var(--ease);}
+  .plink:hover{border-color:var(--brass-soft); color:var(--brass-soft); transform:translateY(-2px);}
+  .stats{display:grid; gap:24px;}
+  .stat{border-left:2px solid var(--brass); padding:8px 0 8px 22px;}
+  .stat .n{font-family:"Fraunces",serif; font-size:clamp(38px,4.5vw,52px); color:var(--brass-soft); line-height:1;}
+  .stat .l{font-size:14px; color:var(--mist); margin-top:6px; max-width:26ch;}
+
+  /* footer */
+  footer{background:#040b13; border-top:1px solid var(--line-d); padding:clamp(60px,8vw,90px) 0 34px; overflow:hidden;}
+  .f-mark{font-family:"Fraunces",serif; font-size:clamp(90px,20vw,260px); line-height:.9; color:transparent; -webkit-text-stroke:1px rgba(242,236,221,.14); text-align:center; user-select:none; transition:color 1s var(--ease);}
+  footer:hover .f-mark{color:rgba(242,236,221,.05);}
+  .f-row{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-top:clamp(40px,6vw,64px); color:var(--mist); font-size:13.5px;}
+  .f-row a{color:var(--brass-soft); text-decoration:none;}
+  .f-row a:hover{color:var(--paper);}
+
+  /* reveal defaults (JS-enhanced) */
+  html.enhanced .rv{opacity:0; transform:translateY(26px);}
+  html.enhanced .rv-l{opacity:0; transform:translateX(-30px);}
+
+  @media(max-width:960px){
+    .what-grid,.res-grid{grid-template-columns:1fr; gap:44px;}
+    .app-grid{grid-template-columns:1fr 1fr;}
+    .fw-stage{height:auto; padding:20px 0 10px;}
+    .fw-track{flex-direction:column; padding:0 clamp(22px,4vw,48px);}
+    .fw-card{flex:1 1 auto; min-height:0;}
+    .fw-rail{display:none;}
+    nav.desk{display:none;}
+    .burger{display:block;}
+  }
+  @media(max-width:640px){
+    .app-grid,.fig-grid{grid-template-columns:1fr;}
+    .pub{grid-template-columns:56px 1fr; gap:14px;}
+    .pub .arrow{display:none;}
+    .coords{display:none;}
+    .s-head{grid-template-columns:1fr; gap:8px;}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001s !important; transition-duration:.001s !important;}
+    .marq .track{animation:none;}
   }
 </style>
 </head>
 <body>
+<script>document.documentElement.classList.remove('no-js');</script>
 
-<header class="nav">
+<div class="grain" aria-hidden="true"></div>
+<div class="cur-dot" aria-hidden="true"></div>
+<div class="cur-ring" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><span id="prog"></span></div>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="l-mark"><span>D</span><span>H</span><span>E</span></div>
+  <div class="l-line"><i id="lline"></i></div>
+  <div class="l-sub mono" id="lsub">Est. 2020 · University College London</div>
+</div>
+<header class="nav" id="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="index.html"><span class="mark">AS</span> Abdulaziz&nbsp;F.&nbsp;Sindi</a>
-    <nav>
-      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
-      <ul id="menu">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#research">Research</a></li>
-        <li><a href="dhe.html" class="active">DHE System</a></li>
-        <li><a href="https://www.digitalhealthcareengineering.com" target="_blank" rel="noopener" style="color:var(--brass-soft) !important;">DHE Website ↗</a></li>
-        <li><a href="index.html#publications">Publications</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
+    <a class="brand" href="#top"><b>DHE</b> <span class="est">Est. 2020 · UCL</span></a>
+    <nav class="desk" aria-label="Primary">
+      <ul>
+        <li><a href="#what" data-nav="what">What is DHE</a></li>
+        <li><a href="#framework" data-nav="framework">Framework</a></li>
+        <li><a href="#origin" data-nav="origin">Origin</a></li>
+        <li><a href="#applications" data-nav="applications">Applications</a></li>
+        <li><a href="#publications" data-nav="publications">Publications</a></li>
+        <li><a href="#researcher" data-nav="researcher">Researcher</a></li>
       </ul>
     </nav>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <a class="nav-cta" href="https://azizsindi.github.io" target="_blank" rel="noopener">Full Profile</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    </div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <svg class="contours" preserveAspectRatio="none" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g fill="none" stroke="#ffffff" stroke-width="1">
-      <path d="M-50 120 C 250 60, 500 200, 800 130 S 1300 90, 1300 90"/>
-      <path d="M-50 200 C 250 150, 520 280, 820 210 S 1300 170, 1300 170"/>
-      <path d="M-50 290 C 280 240, 560 360, 860 300 S 1300 260, 1300 260"/>
-      <path d="M-50 390 C 280 340, 580 450, 880 400 S 1300 360, 1300 360"/>
-      <path d="M-50 480 C 300 440, 600 540, 900 500 S 1300 470, 1300 470"/>
-    </g>
-  </svg>
-  <div class="glow"></div>
-  <div class="wrap hero-inner">
-    <p class="eyebrow">The Framework</p>
-    <h1>Digital Healthcare Engineering <span class="accent">(DHE)</span></h1>
-    <p class="lede">A modular framework for the lifecycle digitalisation of ships and offshore structures — bringing real-time monitoring, digital twins, AI diagnostics, and predictive maintenance into a single connected system.</p>
-  </div>
-</section>
+<div class="m-menu" id="mmenu" aria-hidden="true">
+  <a href="#what"><span>What is DHE</span><span class="mono">01</span></a>
+  <a href="#framework"><span>Framework</span><span class="mono">02</span></a>
+  <a href="#origin"><span>Origin</span><span class="mono">03</span></a>
+  <a href="#applications"><span>Applications</span><span class="mono">04</span></a>
+  <a href="#publications"><span>Publications</span><span class="mono">05</span></a>
+  <a href="#researcher"><span>Researcher</span><span class="mono">06</span></a>
+</div>
 
-<!-- INTRO -->
-<section class="intro-sec reveal">
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <canvas id="sea" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+  <div class="coords mono" aria-hidden="true">
+    <span>51.5246° N · 0.1340° W</span>
+    <span>University College London</span>
+    <span>Marine · Offshore · Digital</span>
+  </div>
   <div class="wrap">
-    <p class="section-tag">Overview</p>
-    <h2 class="section-title">Lifecycle healthcare for engineered structures</h2>
-    <p class="lead-para">Ships and offshore structures spend decades in harsh, remote environments. Over time they accumulate corrosion, fatigue cracking, and mechanical damage — often far from where engineers can easily reach them.</p>
-    <p class="body">Digital Healthcare Engineering treats these structures the way modern medicine treats a patient: through continuous monitoring, accurate diagnosis, and timely intervention. Rather than waiting for scheduled dry-docking or responding only after damage is found, the framework keeps a live picture of a structure's condition across its entire service life — sensing in the field, analysing on shore, and planning maintenance before small problems become critical ones.</p>
-    <p class="body">The framework I first proposed in 2021 began as an approach to the lifetime digitalisation of ships and offshore structures, and developed into the Digital Healthcare Engineering system described here. It is modular by design, so each part can be developed, tested, and deployed independently while still feeding the whole.</p>
-    <div class="analogy">
-      <p>Monitoring vital signs, diagnosing early, treating in time — applied not to the human body, but to the steel structures we depend on at sea.</p>
+    <p class="h-eyebrow mono" id="h-eyebrow">A framework for lifecycle digitalisation</p>
+    <h1 class="h-title" id="h-title">
+      <span class="row"><span>Digital</span></span>
+      <span class="row"><span class="it">Healthcare</span></span>
+      <span class="row"><span>Engineering</span></span>
+    </h1>
+    <p class="h-sub" id="h-sub">Continuous, clinical-grade care for <b>ships and offshore structures</b>: real-time monitoring, digital twins, AI diagnostics, and predictive maintenance, connected as one system across the entire service life.</p>
+    <div class="h-cta" id="h-cta">
+      <a class="btn btn-solid" href="#framework"><i class="fill"></i><span>Explore the framework</span></a>
+      <a class="btn btn-ghost" href="#publications"><i class="fill"></i><span>Research &amp; publications</span></a>
     </div>
   </div>
+  <div class="scroll-cue mono" aria-hidden="true"><div class="stem"><i></i></div><span>Descend</span></div>
 </section>
 
-<!-- DIAGRAM -->
-<section class="diagram-sec reveal">
+<!-- ============ MARQUEE ============ -->
+<div class="marq" aria-hidden="true">
+  <div class="track">
+    <div class="item"><span>Digital Twins</span><i></i><span>AI Diagnostics</span><i></i><span>Predictive Maintenance</span><i></i><span>Structural Health Monitoring</span><i></i><span>Offshore Wind</span><i></i><span>Ships</span><i></i><span>Subsea Pipelines</span><i></i><span>Lifecycle Digitalisation</span><i></i></div>
+    <div class="item"><span>Digital Twins</span><i></i><span>AI Diagnostics</span><i></i><span>Predictive Maintenance</span><i></i><span>Structural Health Monitoring</span><i></i><span>Offshore Wind</span><i></i><span>Ships</span><i></i><span>Subsea Pipelines</span><i></i><span>Lifecycle Digitalisation</span><i></i></div>
+  </div>
+</div>
+
+<!-- ============ WHAT ============ -->
+<section class="what" id="what">
   <div class="wrap">
-    <p class="section-tag">How It Works</p>
-    <h2 class="section-title">The five modules</h2>
-    <p class="body">From sensing in the field to maintenance decisions on shore, the DHE framework connects five stages into a continuous loop.</p>
-    <div class="flow-track">
-      <div class="rail"></div>
-      <div class="flow">
-        <div class="step">
-          <div class="dot">1</div>
-          <h3>Real-Time Monitoring &amp; Digitisation</h3>
-          <p>On-site measurement and digitisation of structural health parameters.</p>
+    <div class="s-head">
+      <span class="s-no">01 / Overview</span>
+      <div>
+        <h2 class="s-title rv">What is Digital Healthcare Engineering?</h2>
+      </div>
+    </div>
+    <p class="lead" id="lead-what">DHE treats engineering structures the way modern medicine treats a patient: through continuous monitoring, accurate diagnosis, and timely intervention.</p>
+    <div class="what-grid">
+      <div>
+        <p class="body rv">Ships and offshore structures operate in some of the most demanding environments on earth, subjected to corrosion, fatigue cracking, and mechanical damage across decades of service, often in remote locations far from inspection and maintenance facilities.</p>
+        <p class="body rv">Conventional maintenance strategies, based on scheduled dry-docking and reactive repair, are increasingly unable to keep pace with the scale and complexity of aging infrastructure. Digital Healthcare Engineering addresses this gap by giving every structure a continuous, data-driven health picture, from sensors in the field, through analytics on shore, to predictive maintenance decisions well before failure.</p>
+        <div class="analogy rv">
+          <p>Just as a doctor monitors vital signs, diagnoses early, and prescribes treatment in time, DHE does the same for steel structures at sea.</p>
         </div>
-        <div class="step">
-          <div class="dot">2</div>
-          <h3>Secure Data Transmission</h3>
-          <p>Reliable transfer of field data to land-based analytics centres.</p>
-        </div>
-        <div class="step">
-          <div class="dot">3</div>
-          <h3>Digital-Twin Analytics</h3>
-          <p>Advanced analytics and simulation using digital twin technology.</p>
-        </div>
-        <div class="step">
-          <div class="dot">4</div>
-          <h3>AI-Driven Diagnostics</h3>
-          <p>Automated diagnosis and maintenance recommendations using AI.</p>
-        </div>
-        <div class="step">
-          <div class="dot">5</div>
-          <h3>Predictive Health Analysis</h3>
-          <p>Forecasting condition to plan future maintenance optimally.</p>
-        </div>
+      </div>
+      <div class="needs">
+        <div class="need rv"><span class="mono">Threat / 01</span><h4>Corrosion wastage</h4><p>Metal loss from seawater exposure progressively reduces structural capacity and is difficult to quantify without continuous monitoring.</p></div>
+        <div class="need rv"><span class="mono">Threat / 02</span><h4>Fatigue cracking</h4><p>Cyclic loading from waves, wind, and operational forces accumulates damage that can propagate undetected without real-time sensing.</p></div>
+        <div class="need rv"><span class="mono">Threat / 03</span><h4>Mechanical damage</h4><p>Impact events, denting, and deformation alter structural performance in ways that static inspection intervals cannot reliably capture.</p></div>
+        <div class="need rv"><span class="mono">Threat / 04</span><h4>Remote operation</h4><p>Offshore structures are far from shore and human expertise, making continuous digital oversight essential rather than optional.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery-sec reveal">
+<!-- ============ FRAMEWORK ============ -->
+<section class="fw" id="framework">
+  <div class="wrap fw-head">
+    <div class="s-head">
+      <span class="s-no">02 / The Five Modules</span>
+      <div>
+        <h2 class="s-title rv">One connected loop, from sensor to decision</h2>
+        <p class="s-kicker rv">The framework is modular by design. Each component can be developed, deployed, and validated independently while feeding the whole system, a closed loop from field sensing to maintenance action.</p>
+      </div>
+    </div>
+  </div>
+  <div class="fw-stage" id="fw-pin">
+    <div class="fw-rail" aria-hidden="true"><i id="fw-prog"></i></div>
+    <div class="fw-track" id="fw-track">
+        <article class="fw-card"><span class="ghost">1</span><span class="mono">Module 01</span><h3>Real-Time Monitoring &amp; Digitisation</h3><p>In-service measurement and digitisation of structural health parameters using portable and fixed sensors.</p></article>
+        <article class="fw-card"><span class="ghost">2</span><span class="mono">Module 02</span><h3>Secure Data Transmission</h3><p>Reliable transfer of field data to land-based analytics centres, including via satellite link from remote locations.</p></article>
+        <article class="fw-card"><span class="ghost">3</span><span class="mono">Module 03</span><h3>Digital-Twin Analytics</h3><p>Advanced structural simulation and data analytics using a digital twin of the physical asset.</p></article>
+        <article class="fw-card"><span class="ghost">4</span><span class="mono">Module 04</span><h3>AI-Driven Diagnostics</h3><p>Machine learning and AI-driven assessment of structural condition, with automated recommendations for remedial action.</p></article>
+        <article class="fw-card"><span class="ghost">5</span><span class="mono">Module 05</span><h3>Predictive Health Analysis</h3><p>Forecasting future condition to plan inspection and maintenance optimally over the remaining service life.</p></article>
+      </div>
+    </div>
+  <div class="wrap fw-video">
+    <span class="s-no" style="display:block; margin-bottom:16px;">Watch / The DHE framework explained</span>
+    <div class="video-shell rv">
+      <iframe src="https://www.youtube.com/embed/20TFiXE5EBA" allowfullscreen loading="lazy" title="Digital Healthcare Engineering Framework"></iframe>
+    </div>
+  </div>
+</section>
+<!-- ============ ORIGIN ============ -->
+<section class="paper-sec" id="origin">
   <div class="wrap">
-    <p class="section-tag">The System in Practice</p>
-    <h2 class="section-title">From field testing to digital twins</h2>
+    <div class="s-head">
+      <span class="s-no">03 / Origin &amp; History</span>
+      <div>
+        <h2 class="s-title rv">How the framework developed</h2>
+        <p class="s-kicker rv">Digital Healthcare Engineering grew out of an integrated framework for the lifecycle health management of marine and offshore assets, conceived in 2020, published in 2021, and developed over the following years into the system described on this site.</p>
+      </div>
+    </div>
+    <div class="tl">
+      <div class="spine" aria-hidden="true"><i id="tl-prog"></i></div>
+      <div class="tl-item">
+        <span class="tl-node" aria-hidden="true"></span>
+        <p class="tl-year">2020</p>
+        <h3>The framework is conceived</h3>
+        <p><a href="https://profiles.ucl.ac.uk/81227-abdulaziz-faisal-sindi-sindi/about" target="_blank" rel="noopener">Abdulaziz Sindi</a> conceived and proposed an integrated framework for the lifecycle health management of marine and offshore assets. The proposed research brought together monitoring and digitalisation, artificial intelligence and machine learning, physics-based numerical modelling, diagnostic assessment, predictive health analysis, and maintenance planning. Contemporaneous correspondence from August and September 2020 records his marine digitalisation research direction and confirms that the detailed proposal was submitted before the supervisory relationship began.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-node" aria-hidden="true"></span>
+        <p class="tl-year">2021</p>
+        <h3>The framework is published</h3>
+        <p>Sindi, Thomas and Paik published the state-of-the-art review paper <em>A State-of-the-Art on Digital Twin Modelling for Lifetime Healthcare of Ships and Offshore Structures</em> at the <a href="https://discovery.ucl.ac.uk/id/eprint/10212690" target="_blank" rel="noopener">International Conference on Ships and Offshore Structures</a>. The coauthored review paper included an original contribution created by <a href="https://profiles.ucl.ac.uk/81227-abdulaziz-faisal-sindi-sindi/about" target="_blank" rel="noopener">Abdulaziz Sindi</a>: the maritime digitalisation framework. This framework established the integrated technical architecture that forms the foundation of maritime DHE.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-node" aria-hidden="true"></span>
+        <p class="tl-year">2024</p>
+        <h3>Reviewed in full, and named</h3>
+        <p><a href="https://profiles.ucl.ac.uk/81227-abdulaziz-faisal-sindi-sindi/about" target="_blank" rel="noopener">Abdulaziz Sindi</a> led the first comprehensive review and feasibility analysis of the framework for ageing ships and offshore structures as first author in <a href="https://doi.org/10.1017/dce.2024.14" target="_blank" rel="noopener">Data-Centric Engineering</a>. During the same year, Jeom-Kee Paik introduced the term Digital Healthcare Engineering (DHE) in an editorial article. The terminology provided a name for Sindi's pre-existing framework and broadened the framing of the research programme to include human well-being alongside structural health management.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-node" aria-hidden="true"></span>
+        <p class="tl-year">2024&#8211;2026</p>
+        <h3>Extended across the field</h3>
+        <p>DHE was applied and extended across monopile and jacket-type offshore wind turbines, containerships, subsea pipelines, land-based LNG tanks, FRP composite pipeline repairs, and human health, by researchers at UCL and collaborating institutions internationally.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-node" aria-hidden="true"></span>
+        <p class="tl-year">Today</p>
+        <h3>A dedicated research programme</h3>
+        <p>The framework underpins the Marine Safety and Digital Healthcare Engineering Group at UCL, supported by a growing body of more than fifteen publications building on the original work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPLICATIONS ============ -->
+<section class="apps" id="applications">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="s-no">04 / Applications</span>
+      <div>
+        <h2 class="s-title rv">Where DHE is being applied</h2>
+        <p class="s-kicker rv">Since its proposal the DHE framework has been extended and applied across a growing range of marine and offshore asset classes by researchers at UCL and collaborating institutions worldwide.</p>
+      </div>
+    </div>
+    <div class="app-grid">
+      <div class="app rv">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><line x1="24" y1="20" x2="24" y2="44"/><line x1="24" y1="18" x2="24" y2="4"/><line x1="24" y1="18" x2="36" y2="26"/><line x1="24" y1="18" x2="12" y2="26"/><circle cx="24" cy="18" r="2.5"/><path d="M14 44h20"/></svg>
+        <h3>Monopile Offshore Wind Turbines</h3><p>Ageing monopile foundations under combined wind, wave, and rotor loading, including corrosion, fatigue, and storm-condition assessments.</p>
+      </div>
+      <div class="app rv">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 30h40l-6 10H10z"/><path d="M12 30V18h18v12"/><line x1="21" y1="18" x2="21" y2="10"/><path d="M4 44c3-2 5-2 8 0s5 2 8 0 5-2 8 0 5 2 8 0"/></svg>
+        <h3>Ships &amp; Containerships</h3><p>Hull structural health monitoring, digital twin modelling, and predictive maintenance for ageing commercial vessels including containerships.</p>
+      </div>
+      <div class="app rv">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><line x1="14" y1="44" x2="18" y2="8"/><line x1="34" y1="44" x2="30" y2="8"/><line x1="18" y1="8" x2="30" y2="8"/><line x1="16" y1="26" x2="32" y2="26"/><line x1="17" y1="17" x2="31" y2="17"/><line x1="16" y1="26" x2="31" y2="17"/><line x1="32" y1="26" x2="17" y2="17"/><line x1="15" y1="35" x2="33" y2="35"/></svg>
+        <h3>Jacket-Type Offshore Platforms</h3><p>Safety and sustainability assessment of ageing jacket platforms in extreme weather, incorporating DHE diagnostics and maintenance planning.</p>
+      </div>
+      <div class="app rv">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 24c8-10 16 10 24 0s12-4 16-8"/><circle cx="12" cy="19" r="2"/><circle cx="28" cy="24" r="2"/><path d="M4 36c8-10 16 10 24 0s12-4 16-8"/></svg>
+        <h3>Subsea Pipelines</h3><p>State-of-the-art reviews and data-driven methods for DHE-based monitoring and maintenance of ageing offshore pipeline infrastructure.</p>
+      </div>
+      <div class="app rv">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="12" width="24" height="28" rx="4"/><path d="M12 20h24"/><path d="M20 12V8h8v4"/><path d="M18 30c2-3 4-3 6 0s4 3 6 0"/></svg>
+        <h3>Land-Based LNG Tanks</h3><p>Feasibility assessment of DHE for ageing LNG storage tanks in seismic environments, extending the framework onshore.</p>
+      </div>
+      <div class="app rv">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="12" r="6"/><path d="M12 42c0-8 5-13 12-13s12 5 12 13"/><path d="M8 26h6l2-4 3 7 3-10 2 7h6"/></svg>
+        <h3>Seafarer Health &amp; Well-Being</h3><p>Human Digital Healthcare Engineering, applying the same framework principles to monitoring and improving the health of seafarers and offshore workers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ PRACTICE ============ -->
+<section class="practice" id="practice">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="s-no">05 / In Practice</span>
+      <div>
+        <h2 class="s-title rv">Field testing and digital twins</h2>
+      </div>
+    </div>
 
     <figure class="fig">
-      <img src="dt-monopile.png" alt="Digital twin simulation of an ageing monopile-type offshore wind turbine">
-      <figcaption><strong>Digital twin simulations within the DHE framework for ageing monopile-type offshore wind turbines.</strong> High-fidelity structural response modelling used to assess limit states under combined environmental and operational loading.</figcaption>
+      <div class="frame"><span class="mask" aria-hidden="true"></span><img src="dt-monopile.png" alt="Digital twin simulation of an ageing monopile offshore wind turbine" loading="lazy"></div>
+      <figcaption><strong>Digital twin simulation within the DHE framework for an ageing monopile-type offshore wind turbine.</strong> High-fidelity structural response modelling used to assess limit states under combined wind, wave, and rotor blade loading.</figcaption>
     </figure>
 
     <div class="fig-grid">
       <figure class="fig">
-        <img src="field-monitoring.png" alt="Field test of in-service damage monitoring using a portable ultrasonic sensor and tablet-based inspection">
-        <figcaption><strong>In-service damage monitoring (field test).</strong> Portable ultrasonic sensing paired with a tablet-based inspection workflow for in-situ damage detection and logging.</figcaption>
+        <div class="frame"><span class="mask" aria-hidden="true"></span><img src="field-monitoring.png" alt="In-service damage monitoring using portable ultrasonic sensor and tablet" loading="lazy"></div>
+        <figcaption><strong>Module 1 in the field.</strong> Portable ultrasonic sensing with tablet-based inspection workflow for in-situ damage detection and digitisation.</figcaption>
       </figure>
       <figure class="fig">
-        <img src="field-damage.png" alt="On-site measurements of corrosion wastage, root cracking, and mechanical denting with tablet-based inspection interface">
-        <figcaption><strong>On-site measurement and digitisation workflow (field test).</strong> (a) corrosion wastage at the splash zone, (b) root cracking, (c) mechanical denting at an impact zone, and (d) the tablet interface used to record, annotate, and encode damage geometry for digital-twin model updating.</figcaption>
+        <div class="frame"><span class="mask" aria-hidden="true"></span><img src="field-damage.png" alt="On-site measurements of corrosion, cracking, denting and tablet interface" loading="lazy"></div>
+        <figcaption><strong>On-site measurement and digitisation workflow.</strong> (a) corrosion wastage, (b) root cracking, (c) mechanical denting, and (d) tablet interface for real-time damage encoding and digital-twin updating.</figcaption>
       </figure>
     </div>
 
-    <h2 class="section-title" style="margin-top:64px;">Extending the framework to ship structures</h2>
-    <p class="body">The framework has also been applied to ageing containership hull structures. The field study below was carried out on the container ship <em>Ning Yuan</em> (Ningbo) by Hyeong&#8209;Jin Kim within the wider research group.</p>
-
+    <h3 class="sub rv">Application to containership hull structures</h3>
+    <p class="body rv">The framework has also been applied to ageing containership hulls, demonstrated on the container ship <em>Ning Yuan</em> (Ningbo) by Hyeong-Jin Kim within the UCL research group.</p>
     <div class="fig-grid">
       <figure class="fig">
-        <img src="containership-port.png" alt="Target container ship Ning Yuan under tug escort in port">
-        <figcaption><strong>Target ship: <em>Ning Yuan</em> (Ningbo).</strong> Field study on an in-service container ship.<br><span class="group-credit">Group work — H.-J. Kim</span></figcaption>
+        <div class="frame"><span class="mask" aria-hidden="true"></span><img src="containership-port.png" alt="Target containership Ning Yuan in port" loading="lazy"></div>
+        <figcaption><strong>Target ship: <em>Ning Yuan</em>.</strong> In-service container ship used for field validation of the DHE monitoring modules.<br><span class="credit">Group work · H.-J. Kim, UCL</span></figcaption>
       </figure>
       <figure class="fig">
-        <img src="containership-drydock.png" alt="Target container ship in dry dock showing hull and propeller">
-        <figcaption><strong>Hull inspection in dry dock.</strong> Direct access to the hull supports calibration and validation of the monitoring data.<br><span class="group-credit">Group work — H.-J. Kim</span></figcaption>
+        <div class="frame"><span class="mask" aria-hidden="true"></span><img src="containership-dt.png" alt="Digital twin stress visualisation of the container ship hull" loading="lazy"></div>
+        <figcaption><strong>Digital twin of the containership hull.</strong> Full-hull structural response model for predictive health analysis.<br><span class="credit">Group work · H.-J. Kim, UCL</span></figcaption>
       </figure>
     </div>
-
-    <figure class="fig" style="margin-top:24px;">
-      <img src="containership-dt.png" alt="Digital twin stress visualisation of the container ship hull">
-      <figcaption><strong>Digital twin visualisation of the container ship.</strong> Full-hull structural response model used for predictive health analysis of the ageing hull.<br><span class="group-credit">Group work — H.-J. Kim</span></figcaption>
-    </figure>
   </div>
 </section>
 
-<!-- LITERATURE -->
-<section class="lit-sec reveal">
+<!-- ============ PUBLICATIONS ============ -->
+<section class="paper-sec pubs" id="publications">
   <div class="wrap">
-    <p class="section-tag">Research Landscape</p>
-    <h2 class="section-title">Digital Healthcare Engineering in the literature</h2>
-    <p class="body">Since the framework was first proposed in 2021, Digital Healthcare Engineering has grown into an active field of research. Studies now apply and extend it across ships, offshore wind turbines, jacket platforms, land-based LNG tanks, subsea pipelines, FRP composite repairs, and the health and well-being of seafarers — and the work has supported a dedicated research group at UCL.</p>
+    <div class="s-head">
+      <span class="s-no">06 / Research</span>
+      <div>
+        <h2 class="s-title rv">Key DHE publications</h2>
+        <p class="s-kicker rv">The framework was conceived in 2020, first published in 2021, and has since grown into an active international research field, with studies spanning ships, offshore wind, jacket platforms, LNG tanks, pipelines, and seafarer health.</p>
+      </div>
+    </div>
 
-    <ol class="lit-list">
-      <li class="mine"><strong>Sindi A</strong>, Thomas G, Paik JK. A state-of-the-art on the digital twin modelling for lifetime healthcare of ships and offshore structures. <em>Proc. ICSOS 2021</em>, Hamburg, Germany, 2021.</li>
-      <li class="mine"><strong>Sindi A</strong>, Kim HJ, Yang YJ, et al. Advancing digital healthcare engineering for aging ships and offshore structures: an in-depth review and feasibility analysis. <em>Data-Centric Eng</em> 5, 2024. <a href="https://doi.org/10.1017/dce.2024.14">doi:10.1017/dce.2024.14</a></li>
-      <li>Paik JK. Enhancing safety and sustainability through digital healthcare engineering: ships, structures, and seafarers. <em>Marine Technology</em>, 2024, 34–40.</li>
-      <li>Xie Y, Kim HJ, Yin Y, et al. Enhancing the safety and sustainability of aging jacket-type offshore wind turbines in extreme weather conditions through digital healthcare engineering: a literature review. <em>Ships Offshore Struct</em>, 2025, 1–28.</li>
-      <li>Duan W, Tan PJ, Paik JK. Enhancing safety and resilience of ageing land-based LNG tank structures through digital healthcare engineering: a feasibility assessment in seismic environments. <em>Ships Offshore Struct</em>, 2024, 1–17.</li>
-      <li>Cui M-X, He K-H, Wang F, et al. Human digital healthcare engineering for enhancing the health and well-being of seafarers and offshore workers: a comprehensive review. <em>Systems</em>, 2025, 13:335.</li>
-      <li>Kim HJ, Paik JK. A digital twin model within the framework of a digital healthcare engineering system for aging containership hull structures. <em>Ships Offshore Struct</em>, 2025, 1–18.</li>
-      <li>Mohammad Fadzil N, Muda MF, Abdul Shahid MD, et al. Digital healthcare engineering for aging offshore pipelines: a state-of-the-art review. <em>Ships Offshore Struct</em>, 2024, 1–14.</li>
-      <li>Liu K, Liu Y, Cai B, et al. A calculation method for the digital twin of aging jacket platforms within the digital healthcare engineering framework. <em>Ocean Eng</em>, 2026, 343:123367.</li>
-      <li>Kim HJ, Xie Y, Paik JK. Predictive health analysis for future maintenance planning in aging containership hull structures within digital healthcare engineering systems. In: <em>Vol. 1: Offshore Technology; Structures, Safety and Reliability; Materials Technology</em>, ASME, Vancouver, V001T02A036.</li>
-      <li>Paik JK. From the Titanic era to the AI era: digital healthcare engineering as a lifecycle, real-time, intelligent, integrated management solution driven by AI, digital twin, and high-speed communication technologies. <em>Ships Offshore Struct</em>, 2026, 21:8–11.</li>
-      <li>Hairil Mohd M, Fakri Muda M, Kitane Y, et al. A systematic mapping study on data-driven methods within the digital healthcare engineering framework for composite FRP repairs of offshore pipelines. <em>Ships Offshore Struct</em>, 2026, 1–14.</li>
-      <li>Liu K, Cai B, Xie Y, et al. Digital healthcare engineering for enhancing the safety and sustainability of aging jacket platforms: a comprehensive review and gap analysis. <em>Saf Sci</em>, 2026, 199:107175.</li>
-      <li>Song SW, Yang JH, Jang BS, et al. Fourier neural operator surrogate for automated stress conversion-based structural health monitoring of complex marine infrastructure. <em>Autom Constr</em>, 2026, 184:106836.</li>
-      <li>Paik JK. Special issue — from the Titanic era to the AI era: a century of transformation in ships and offshore structures. <em>Ships Offshore Struct</em>, 2026, 21:1–3.</li>
-      <li>University College London. <a href="https://www.ucl.ac.uk/engineering/marine-safety-and-digital-healthcare-engineering-group">Marine Safety and Digital Healthcare Engineering Group</a>.</li>
-    </ol>
-    <p class="lit-note">Highlighted entries are first-authored by Abdulaziz Sindi, including the originating 2021 framework paper [1].</p>
+    <p class="pub-group first">Originating &amp; core framework work</p>
+
+    <div class="pub rv">
+      <div class="yr">2021</div>
+      <div>
+        <h3>A State-of-the-Art on Digital Twin Modelling for Lifetime Healthcare of Ships and Offshore Structures</h3>
+        <p class="meta">ICSOS 2021, International Conference on Ships and Offshore Structures, Hamburg, Germany. <a class="doi" href="https://discovery.ucl.ac.uk/id/eprint/10212690" target="_blank" rel="noopener">UCL Discovery</a></p>
+        <p class="authors"><strong>Abdulaziz Sindi</strong>, Giles Thomas, Jeom Kee Paik</p>
+        <span class="tag">Conference Paper</span>
+      </div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </div>
+
+    <div class="pub rv">
+      <div class="yr">2024</div>
+      <div>
+        <h3>Advancing Digital Healthcare Engineering for Ageing Ships and Offshore Structures: An In-Depth Review and Feasibility Analysis</h3>
+        <p class="meta">Data-Centric Engineering (Cambridge University Press), Vol. 5, e18. <a class="doi" href="https://doi.org/10.1017/dce.2024.14">doi:10.1017/dce.2024.14</a></p>
+        <p class="authors"><strong>Abdulaziz Sindi</strong>, Hyeong Jin Kim, Young Jun Yang, Giles Thomas, Jeom Kee Paik</p>
+        <span class="tag">Journal Article</span>
+      </div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </div>
+
+    <p class="pub-group">Applications and extensions</p>
+
+    <div class="pub rv"><div class="yr">2024</div><div><h3>Enhancing Safety and Sustainability through Digital Healthcare Engineering: Ships, Structures, and Seafarers</h3><p class="meta">Marine Technology, 2024, pp. 34–40.</p><p class="authors">Paik JK.</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2024</div><div><h3>Effect of Corrosion Wastage on the Limit States of Monopile-Type Offshore Wind Turbines Under Combined Wind and Rotor Blade Rotation</h3><p class="meta">Materials and Corrosion (Wiley). <a class="doi" href="https://doi.org/10.1002/maco.202414378">doi:10.1002/maco.202414378</a></p><p class="authors"><strong>Abdulaziz Sindi</strong>, Hyeong Jin Kim, Igor A. Chaves, Jeom Kee Paik</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2024</div><div><h3>Enhancing Safety and Resilience of Ageing Land-Based LNG Tank Structures through Digital Healthcare Engineering: A Feasibility Assessment in Seismic Environments</h3><p class="meta">Ships and Offshore Structures, 2024, pp. 1–17.</p><p class="authors">Duan W, Tan PJ, Paik JK.</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2024</div><div><h3>Digital Healthcare Engineering for Aging Offshore Pipelines: A State-of-the-Art Review</h3><p class="meta">Ships and Offshore Structures, 2024, pp. 1–14.</p><p class="authors">Mohammad Fadzil N, Muda MF, Abdul Shahid MD, et al.</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2025</div><div><h3>Digital Healthcare Engineering System for Enhancing the Safety and Sustainability of Ageing Monopile Offshore Wind Turbines in Storm Conditions</h3><p class="meta">SNAME Maritime Convention 2025, Norfolk, VA. <a class="doi" href="https://doi.org/10.5957/SMC-2025-049">doi:10.5957/SMC-2025-049</a></p><p class="authors"><strong>Abdulaziz Sindi</strong>, Jeom Kee Paik</p><span class="tag">Conference Paper</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2025</div><div><h3>Enhancing the Safety and Sustainability of Aging Jacket-Type Offshore Wind Turbines through Digital Healthcare Engineering: A Literature Review</h3><p class="meta">Ships and Offshore Structures, 2025, pp. 1–28.</p><p class="authors">Xie Y, Kim HJ, Yin Y, et al.</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2025</div><div><h3>Human Digital Healthcare Engineering for Enhancing the Health and Well-Being of Seafarers and Offshore Workers: A Comprehensive Review</h3><p class="meta">Systems, 2025, 13:335.</p><p class="authors">Cui M-X, He K-H, Wang F, et al.</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2025</div><div><h3>Predictive Health Analysis for Future Maintenance Planning in Aging Containership Hull Structures within Digital Healthcare Engineering Systems</h3><p class="meta">ASME OMAE 2025, Vancouver, Canada. Vol. 1: Offshore Technology; Structures, Safety and Reliability; Materials Technology, V001T02A036.</p><p class="authors">Kim HJ, Xie Y, Paik JK.</p><span class="tag">Conference Paper</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2025</div><div><h3>A Digital Twin Model within the Framework of a Digital Healthcare Engineering System for Aging Containership Hull Structures</h3><p class="meta">Ships and Offshore Structures, 22 May 2025. <a class="doi" href="https://doi.org/10.1080/17445302.2025.2505827">doi:10.1080/17445302.2025.2505827</a></p><p class="authors">Hyeong Jin Kim, Jeom Kee Paik</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2026</div><div><h3>A Calculation Method for the Digital Twin of Aging Jacket Platforms within the Digital Healthcare Engineering Framework</h3><p class="meta">Ocean Engineering, 2026, 343:123367.</p><p class="authors">Liu K, Liu Y, Cai B, et al.</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2026</div><div><h3>Digital Healthcare Engineering for Enhancing the Safety and Sustainability of Aging Jacket Platforms: A Comprehensive Review and Gap Analysis</h3><p class="meta">Safety Science, 2026, 199:107175.</p><p class="authors">Liu K, Cai B, Xie Y, et al.</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2026</div><div><h3>Digital Healthcare Engineering as a Lifecycle, Real-Time, Intelligent, Integrated Management Solution Driven by AI, Digital Twin, and High-Speed Communication Technologies</h3><p class="meta">Ships and Offshore Structures, 2026, 21:8–11.</p><p class="authors">Paik JK.</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2026</div><div><h3>A Systematic Mapping Study on Data-Driven Methods within the Digital Healthcare Engineering Framework for Composite FRP Repairs of Offshore Pipelines</h3><p class="meta">Ships and Offshore Structures, 2026, pp. 1–14.</p><p class="authors">Hairil Mohd M, Fakri Muda M, Kitane Y, et al.</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2026</div><div><h3>Fourier Neural Operator Surrogate for Automated Stress Conversion-Based Structural Health Monitoring of Complex Marine Infrastructure</h3><p class="meta">Automation in Construction, 2026, 184:106836.</p><p class="authors">Song SW, Yang JH, Jang BS, et al.</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">2026</div><div><h3>Special Issue: From the Titanic Era to the AI Era — A Century of Transformation in Ships and Offshore Structures</h3><p class="meta">Ships and Offshore Structures, 2026, 21:1–3.</p><p class="authors">Paik JK.</p><span class="tag">Journal Article</span></div><span class="arrow" aria-hidden="true">→</span></div>
+
+    <div class="pub rv"><div class="yr">UCL</div><div><h3>Marine Safety and Digital Healthcare Engineering Group</h3><p class="meta"><a class="doi" href="https://www.ucl.ac.uk/engineering/marine-safety-and-digital-healthcare-engineering-group" target="_blank" rel="noopener">ucl.ac.uk/engineering/marine-safety-and-digital-healthcare-engineering-group</a></p><p class="authors">University College London, Department of Mechanical Engineering.</p><span class="tag">Research Group</span></div><span class="arrow" aria-hidden="true">→</span></div>
   </div>
 </section>
-
-<!-- BACK -->
-<section class="backstrip">
+<!-- ============ RESEARCHER ============ -->
+<section class="res" id="researcher">
   <div class="wrap">
-    <a href="index.html">← Back to home</a>
+    <div class="s-head">
+      <span class="s-no">07 / The Researcher</span>
+      <div>
+        <h2 class="s-title rv">Developed at UCL</h2>
+      </div>
+    </div>
+    <div class="res-grid">
+      <div>
+        <p class="body rv">The framework at the core of Digital Healthcare Engineering was conceived and proposed by Abdulaziz Faisal Sindi in 2020, before his doctoral programme at University College London began, and first published in his 2021 conference paper. The framework has since developed into DHE and expanded into an active research programme spanning multiple asset classes and institutions.</p>
+        <p class="body rv">Abdulaziz is a PhD researcher in the Department of Mechanical Engineering at UCL, working at the intersection of structural integrity, digital twins, and AI-driven diagnostics for marine and offshore infrastructure. His thesis applies the DHE framework specifically to ageing monopile offshore wind turbines.</p>
+        <p class="body rv">The work is supported by a full doctoral scholarship from the Kingdom of Saudi Arabia, administered through the Saudi Arabian Cultural Bureau in London, and has been recognised with a Certificate of Recognition from the Creativity and Innovation Program of the Royal Embassy of Saudi Arabia Cultural Bureau in London.</p>
+        <div class="plinks rv">
+          <a class="plink" href="https://azizsindi.github.io" target="_blank" rel="noopener">Personal Site</a>
+          <a class="plink" href="https://profiles.ucl.ac.uk/81227-abdulaziz-faisal-sindi-sindi/about" target="_blank" rel="noopener">UCL Profile</a>
+          <a class="plink" href="https://orcid.org/0009-0009-2358-2190" target="_blank" rel="noopener">ORCID</a>
+          <a class="plink" href="https://scholar.google.co.uk/citations?user=Xps83mAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="plink" href="https://www.researchgate.net/profile/Abdulaziz-Sindi" target="_blank" rel="noopener">ResearchGate</a>
+          <a class="plink" href="https://www.linkedin.com/in/aziz-sindi-4a5a2b127/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat rv"><div class="n"><span class="count" data-to="7">0</span></div><div class="l">Publications from the doctoral programme</div></div>
+        <div class="stat rv"><div class="n"><span class="count" data-to="15">0</span>+</div><div class="l">Studies applying and extending the DHE framework internationally</div></div>
+        <div class="stat rv"><div class="n">2020</div><div class="l">Year the framework was conceived and proposed</div></div>
+        <div class="stat rv"><div class="n">UCL</div><div class="l">Marine Safety and Digital Healthcare Engineering Group</div></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap footer-inner">
-    <span>© <span id="yr"></span> Abdulaziz Faisal Sindi</span>
-    <span>Lifecycle digitalisation · Digital Healthcare Engineering · UCL</span>
+  <div class="wrap">
+    <div class="f-mark" aria-hidden="true">DHE</div>
+    <div class="f-row">
+      <span>© <span id="yr"></span> digitalhealthcareengineering.com</span>
+      <span>Developed by <a href="https://azizsindi.github.io">Abdulaziz Faisal Sindi</a>, UCL</span>
+      <span><a href="https://www.ucl.ac.uk/engineering/marine-safety-and-digital-healthcare-engineering-group" target="_blank" rel="noopener">UCL DHE Group</a></span>
+    </div>
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-  document.querySelectorAll('#menu a').forEach(a=>{ a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')); });
-  const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); },{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+(function(){
+  'use strict';
+  var yrEl=document.getElementById('yr'); if(yrEl) yrEl.textContent=new Date().getFullYear();
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGsap=typeof gsap!=='undefined';
+  if(reduced) document.documentElement.classList.add('reduced');
+  var enhanced=hasGsap&&!reduced;
+  if(enhanced) document.documentElement.classList.add('enhanced');
+
+  /* ---------- THREE.JS SEA ---------- */
+  (function(){
+    var canvas=document.getElementById('sea');
+    var hero=document.getElementById('top');
+    if(!canvas||!hero) return;
+
+    function fallback(){
+      if(canvas.parentNode) canvas.parentNode.removeChild(canvas);
+      hero.classList.add('no-sea');
+      if(!hero.querySelector('.sea-fallback')){
+        var d=document.createElement('div');
+        d.className='sea-fallback'; d.setAttribute('aria-hidden','true');
+        d.innerHTML='<svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#3d8a86" stroke-width="1" opacity="0.5"><path d="M-20 360 C 240 320 420 400 660 360 S 1120 320 1240 350"/><path d="M-20 420 C 240 384 440 452 680 416 S 1120 380 1240 410"/><path d="M-20 480 C 260 448 460 508 700 476 S 1120 448 1240 474"/><path d="M-20 540 C 260 512 460 566 700 536 S 1120 512 1240 536"/></g><g fill="#d09c46" opacity="0.55"><circle cx="240" cy="356" r="2"/><circle cx="660" cy="360" r="2"/><circle cx="960" cy="342" r="2"/><circle cx="440" cy="446" r="2"/><circle cx="820" cy="430" r="2"/></g></svg>';
+        hero.insertBefore(d, hero.firstChild);
+      }
+    }
+
+    var coarse=window.matchMedia('(pointer:coarse)').matches;
+    var small=window.matchMedia('(max-width:960px)').matches;
+    var lowMem=(navigator.deviceMemory && navigator.deviceMemory<4);
+    if(typeof THREE==='undefined' || reduced || coarse || small || lowMem){ fallback(); return; }
+
+    var renderer;
+    try{
+      renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true,powerPreference:'low-power'});
+    }catch(e){ fallback(); return; }
+    if(!renderer||!renderer.getContext || !renderer.getContext()){ fallback(); return; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.5));
+
+    var scene=new THREE.Scene();
+    scene.fog=new THREE.Fog(0x060f1a,18,70);
+    var cam=new THREE.PerspectiveCamera(55,1,0.1,120);
+    cam.position.set(0,7.5,16);
+
+    var geo=new THREE.PlaneGeometry(120,80,88,58);
+    geo.rotateX(-Math.PI/2);
+    var pos=geo.attributes.position;
+    var base=new Float32Array(pos.array.length); base.set(pos.array);
+    // one geometry, shared by wireframe mesh + points (single per-frame update)
+    var mesh=new THREE.Mesh(geo,new THREE.MeshBasicMaterial({color:0x3d8a86,wireframe:true,transparent:true,opacity:0.17}));
+    var pts=new THREE.Points(geo,new THREE.PointsMaterial({color:0xd09c46,size:0.09,transparent:true,opacity:0.5}));
+    scene.add(mesh); scene.add(pts);
+
+    var mouse={x:0,y:0};
+    window.addEventListener('pointermove',function(e){
+      mouse.x=(e.clientX/window.innerWidth-0.5);
+      mouse.y=(e.clientY/window.innerHeight-0.5);
+    },{passive:true});
+
+    function resize(){
+      var w=canvas.clientWidth||hero.clientWidth||window.innerWidth;
+      var h=canvas.clientHeight||hero.clientHeight||window.innerHeight;
+      if(!w||!h) return;
+      renderer.setSize(w,h,false);
+      cam.aspect=w/h; cam.updateProjectionMatrix();
+    }
+    resize(); window.addEventListener('resize',resize);
+    // re-measure once layout/fonts settle
+    window.addEventListener('load',resize);
+    setTimeout(resize,300);
+
+    function wave(x,z,t){
+      return Math.sin(x*0.28+t*0.9)*0.55 + Math.cos(z*0.22+t*0.6)*0.45 + Math.sin((x+z)*0.11+t*0.35)*0.85;
+    }
+    var t=0, running=true, raf=0;
+    function tick(){
+      raf=0;
+      if(running){
+        t+=0.012;
+        for(var i=0;i<pos.count;i++){
+          var ix=i*3;
+          pos.array[ix+1]=wave(base[ix],base[ix+2],t);
+        }
+        pos.needsUpdate=true;
+        cam.position.x+=((mouse.x*3)-cam.position.x)*0.04;
+        cam.position.y+=((7.5-mouse.y*2)-cam.position.y)*0.04;
+        cam.lookAt(0,0,0);
+        renderer.render(scene,cam);
+      }
+      raf=requestAnimationFrame(tick);
+    }
+    raf=requestAnimationFrame(tick);
+
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(en){ running=en[0].isIntersecting; },{threshold:0}).observe(hero);
+    }
+    document.addEventListener('visibilitychange',function(){ running=!document.hidden; });
+    // free the context if the tab is torn down
+    window.addEventListener('pagehide',function(){
+      if(raf) cancelAnimationFrame(raf);
+      try{ renderer.dispose(); geo.dispose(); }catch(e){}
+    });
+  })();
+  /* ---------- CURSOR ---------- */
+  (function(){
+    if(!window.matchMedia('(pointer:fine)').matches||reduced) return;
+    document.body.classList.add('cur-on');
+    var dot=document.querySelector('.cur-dot'), ring=document.querySelector('.cur-ring');
+    var x=innerWidth/2,y=innerHeight/2,rx=x,ry=y;
+    addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY;
+      dot.style.left=x+'px';dot.style.top=y+'px';},{passive:true});
+    (function loop(){rx+=(x-rx)*.16;ry+=(y-ry)*.16;
+      ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+    document.querySelectorAll('a,button,.pub,.app,.need').forEach(function(el){
+      el.addEventListener('pointerenter',function(){document.body.classList.add('cur-grow');});
+      el.addEventListener('pointerleave',function(){document.body.classList.remove('cur-grow');});
+    });
+  })();
+
+  /* ---------- MAGNETIC BUTTONS ---------- */
+  if(enhanced&&window.matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.btn,.nav-cta,.plink').forEach(function(el){
+      el.addEventListener('pointermove',function(e){
+        var r=el.getBoundingClientRect();
+        gsap.to(el,{x:(e.clientX-r.left-r.width/2)*.18,y:(e.clientY-r.top-r.height/2)*.28,duration:.4,ease:'power3.out'});
+      });
+      el.addEventListener('pointerleave',function(){gsap.to(el,{x:0,y:0,duration:.6,ease:'elastic.out(1,.45)'});});
+    });
+  }
+
+  /* ---------- NAV / MENU ---------- */
+  (function(){
+    var nav=document.getElementById('nav'), last=0;
+    addEventListener('scroll',function(){
+      var y=scrollY;
+      nav.classList.toggle('scrolled',y>30);
+      if(!document.body.classList.contains('menu-open')){
+        nav.classList.toggle('hide',y>last&&y>240);
+      }
+      last=y;
+    },{passive:true});
+    var burger=document.getElementById('burger'), menu=document.getElementById('mmenu');
+    var links=menu.querySelectorAll('a');
+    function openM(){
+      document.body.classList.add('menu-open'); burger.setAttribute('aria-expanded','true'); menu.setAttribute('aria-hidden','false');
+      if(enhanced){ gsap.set(menu,{visibility:'visible'});
+        gsap.fromTo(menu,{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:.7,ease:'power4.inOut'});
+        gsap.fromTo(links,{y:40,opacity:0},{y:0,opacity:1,stagger:.06,delay:.25,duration:.6,ease:'power3.out'});
+      } else menu.style.visibility='visible';
+    }
+    function closeM(){
+      document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded','false'); menu.setAttribute('aria-hidden','true');
+      if(enhanced){ gsap.to(menu,{clipPath:'inset(0 0 100% 0)',duration:.55,ease:'power4.inOut',
+        onComplete:function(){gsap.set(menu,{visibility:'hidden'});}});
+      } else menu.style.visibility='hidden';
+    }
+    burger.addEventListener('click',function(){document.body.classList.contains('menu-open')?closeM():openM();});
+    links.forEach(function(a){a.addEventListener('click',closeM);});
+  })();
+
+  if(!enhanced){
+    var lp=document.getElementById('loader'); if(lp) lp.style.display='none';
+    return;
+  }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- LOADER + HERO INTRO ---------- */
+  var intro=gsap.timeline();
+  intro
+    .to('.loader .l-mark span',{y:0,duration:.7,stagger:.09,ease:'power4.out'})
+    .to('#lline',{scaleX:1,duration:.8,ease:'power2.inOut'},'-=.3')
+    .to('#lsub',{opacity:1,duration:.4},'-=.4')
+    .to('#loader',{yPercent:-100,duration:.8,ease:'power4.inOut',delay:.15})
+    .set('#loader',{display:'none'})
+    .from('#h-eyebrow',{opacity:0,x:-24,duration:.6,ease:'power3.out'},'-=.35')
+    .from('.h-title .row span',{yPercent:115,duration:1,stagger:.12,ease:'power4.out'},'-=.45')
+    .from('#h-sub',{opacity:0,y:24,duration:.7,ease:'power3.out'},'-=.5')
+    .from('#h-cta .btn',{opacity:0,y:18,stagger:.1,duration:.55,ease:'power3.out'},'-=.4')
+    .from('.coords span',{opacity:0,x:16,stagger:.08,duration:.5},'-=.5')
+    .from('.scroll-cue',{opacity:0,duration:.6},'-=.3');
+
+  /* ---------- PROGRESS ---------- */
+  gsap.to('#prog',{scaleX:1,ease:'none',
+    scrollTrigger:{start:0,end:'max',scrub:.3}});
+
+  /* ---------- GENERIC REVEALS ---------- */
+  document.querySelectorAll('.rv').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,x:0,duration:.9,ease:'power3.out',
+      scrollTrigger:{trigger:el,start:'top 86%'}});
+  });
+
+  /* ---------- LEAD WORD REVEAL ---------- */
+  (function(){
+    var lead=document.getElementById('lead-what'); if(!lead) return;
+    var words=lead.textContent.trim().split(/\s+/);
+    lead.innerHTML=words.map(function(w){return '<span class="w"><span>'+w+'</span></span>';}).join(' ');
+    gsap.from(lead.querySelectorAll('.w > span'),{yPercent:110,duration:.7,stagger:.02,ease:'power3.out',
+      scrollTrigger:{trigger:lead,start:'top 84%'}});
+  })();
+
+  /* ---------- FRAMEWORK HORIZONTAL ---------- */
+  ScrollTrigger.matchMedia({
+    '(min-width: 961px)':function(){
+      var track=document.getElementById('fw-track');
+      var stage=document.getElementById('fw-pin');
+      function dist(){ return Math.max(0, track.scrollWidth - window.innerWidth + 96); }
+      gsap.to(track,{x:function(){return -dist();},ease:'none',
+        scrollTrigger:{trigger:stage,start:'top top',end:function(){return '+='+dist();},
+          pin:true,scrub:.6,invalidateOnRefresh:true,anticipatePin:1}});
+      gsap.to('#fw-prog',{scaleX:1,ease:'none',
+        scrollTrigger:{trigger:stage,start:'top top',end:function(){return '+='+dist();},scrub:.6}});
+      gsap.from('.fw-card',{opacity:0,y:30,stagger:.06,duration:.6,ease:'power3.out',
+        scrollTrigger:{trigger:'#framework',start:'top 60%'}});
+    },
+    '(max-width: 960px)':function(){
+      gsap.utils.toArray('.fw-card').forEach(function(c){
+        gsap.from(c,{opacity:0,y:34,duration:.7,ease:'power3.out',
+          scrollTrigger:{trigger:c,start:'top 88%'}});
+      });
+    }
+  });
+
+  /* ---------- TIMELINE ---------- */
+  gsap.to('#tl-prog',{scaleY:1,ease:'none',
+    scrollTrigger:{trigger:'.tl',start:'top 75%',end:'bottom 55%',scrub:.5}});
+  gsap.utils.toArray('.tl-item').forEach(function(item){
+    gsap.from(item,{opacity:0,y:34,duration:.8,ease:'power3.out',
+      scrollTrigger:{trigger:item,start:'top 82%',
+        onEnter:function(){item.classList.add('on');}}});
+  });
+
+  /* ---------- IMAGE MASK REVEALS ---------- */
+  gsap.utils.toArray('.fig .frame').forEach(function(fr){
+    var mask=fr.querySelector('.mask'), img=fr.querySelector('img');
+    var tl=gsap.timeline({scrollTrigger:{trigger:fr,start:'top 82%'}});
+    tl.to(mask,{scaleY:0,duration:.9,ease:'power4.inOut'})
+      .to(img,{scale:1,duration:1.3,ease:'power3.out'},'-=.55');
+  });
+
+  /* ---------- COUNTERS ---------- */
+  gsap.utils.toArray('.count').forEach(function(el){
+    var to=+el.dataset.to;
+    gsap.fromTo(el,{innerText:0},{innerText:to,duration:1.6,ease:'power2.out',snap:{innerText:1},
+      scrollTrigger:{trigger:el,start:'top 88%'}});
+  });
+
+  /* ---------- ACTIVE NAV ---------- */
+  ['what','framework','origin','applications','publications','researcher'].forEach(function(id){
+    var sec=document.getElementById(id); if(!sec) return;
+    ScrollTrigger.create({trigger:sec,start:'top 45%',end:'bottom 45%',
+      onToggle:function(st){
+        var a=document.querySelector('[data-nav="'+id+'"]');
+        if(a) a.classList.toggle('active',st.isActive);
+      }});
+  });
+
+  /* ---------- FOOTER MARK DRIFT ---------- */
+  gsap.from('.f-mark',{yPercent:35,ease:'none',
+    scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom bottom',scrub:.6}});
+
+  addEventListener('load',function(){ScrollTrigger.refresh();});
+})();
 </script>
 </body>
 </html>
